@@ -15,6 +15,7 @@ jobs:
           node-version: '12'
       - name: Setiing
         run: |
+          pwd
           yarn upgrade
       - name: Run Lint
         run: |
