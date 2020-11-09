@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: '15'
       - name: Setiing
         run: |
           yarn install --frozen-lockfile
@@ -30,5 +30,5 @@ jobs:
       - name: Deploy to GAS
         run: |
           echo ${{ secrets.CLASP_JSON }} > ~/.clasprc.json
-          npx @google/clasp push
+          npx -y @google/clasp push
           
