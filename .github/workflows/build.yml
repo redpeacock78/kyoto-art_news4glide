@@ -29,6 +29,6 @@ jobs:
           yarn build
       - name: Deploy to GAS
         run: |
-          echo ${{ secrets.CLASP_JSON }} > ~/.clasprc.json
+          echo ${{ secrets.CLASP_JSON }} > clasprc.json
           npx -y @google/clasp push
           
