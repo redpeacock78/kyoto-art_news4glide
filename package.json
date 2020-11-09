@@ -1,0 +1,50 @@
+{
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.5",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "cpx": "^1.5.0",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "gas-webpack-plugin": "^1.0.2",
+    "jest": "^26.6.1",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.1",
+    "ts-jest": "^26.4.3",
+    "ts-loader": "^8.0.7",
+    "typescript": "^4.0.5",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0",
+    "yarn.lock": "^0.0.1-security"
+  },
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "lint-fix": "eslint --fix src/**/*.ts",
+    "test": "jest --passWithNoTests",
+    "build": "yarn lint-fix && yarn test && rimraf dist && webpack && cpx src/appscript.json dist",
+    "deploy": "yarn build && clasp push"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(src/.+(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "name": "kyoto-art_news4glide",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/redpeacock78/kyoto-art_news4glide.git",
+  "author": "redpeacock78",
+  "license": "MIT"
+}

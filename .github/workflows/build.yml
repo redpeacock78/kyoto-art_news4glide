@@ -1,0 +1,34 @@
+name: build_deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run-hothouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@master
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: Setiing
+        run: |
+          yarn install --frozen-lockfile
+      - name: Run Lint
+        run: |
+          yarn lint-fix
+      - name: Run Test
+        run: |
+          yarn test
+      - name: Run Webpack Build
+        run: |
+          yarn build
+      - name: Deploy to GAS
+        run: |
+          echo ${{ secrets.CLASP_JSON }} > ~/.clasprc.json
+          npx -y @google/clasp push
+          
