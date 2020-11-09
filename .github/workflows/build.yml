@@ -31,6 +31,6 @@ jobs:
         run: |
           echo ${{ secrets.CLASP_JSON }} > clasprc.json
           echo ${{ secrets.CLASP_JSON }} > ~/.clasprc.json
-          npx -y @google/clasp login
+          npx -y @google/clasp login --no-localhost
           npx -y @google/clasp push -f
           
