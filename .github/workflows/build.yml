@@ -17,7 +17,7 @@ jobs:
           node-version: '12'
       - name: Setiing
         run: |
-          yarn upgrede
+          yarn install --frozen-lockfile
       - name: Run Lint
         run: |
           yarn lint-fix
