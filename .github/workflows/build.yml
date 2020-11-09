@@ -31,5 +31,6 @@ jobs:
         run: |
           echo ${{ secrets.CLASP_JSON }} > clasprc.json
           echo ${{ secrets.CLASP_JSON }} > ~/.clasprc.json
-          npx -y @google/clasp push -f
+          npm i @google/clasp -g
+          sudo clasp push -f
           
