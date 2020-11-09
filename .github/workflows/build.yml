@@ -16,7 +16,6 @@ jobs:
       - name: Setiing
         run: |
           yarn install --frozen-lockfile
-          yarn upgrade
       - name: Run Lint
         run: |
           yarn lint-fix
