@@ -9,13 +9,15 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout master
+        uses: actions/checkout@master
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '12'
       - name: Setiing
         run: |
-          yarn install --frozen-lockfile
+          yarn upgrede
       - name: Run Lint
         run: |
           yarn lint-fix
