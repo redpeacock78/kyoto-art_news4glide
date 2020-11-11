@@ -1,14 +1,14 @@
 async function generate_data<T extends string[][]>(all_data: T): Promise<T> {
-  const all_tit: string[] = all_data.map((i: string[]) => {
+  const all_tit: string[] = all_data.map((i: string[]): string => {
     return i[0];
   });
-  const all_url: string[] = all_data.map((i: string[]) => {
+  const all_url: string[] = all_data.map((i: string[]): string => {
     return i[1];
   });
-  const all_date: string[] = all_data.map((i: string[]) => {
+  const all_date: string[] = all_data.map((i: string[]): string => {
     return i[2];
   });
-  const all_tag: string[] = all_url.map((i: string) => {
+  const all_tag: string[] = all_url.map((i: string): string => {
     return generate_tag<string>({ URL: i });
   });
 
