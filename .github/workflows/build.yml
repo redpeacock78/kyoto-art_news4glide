@@ -32,7 +32,6 @@ jobs:
           yarn build
       - name: Deploy to GAS
         run: |
-          echo "${CLASPRC}" > ~/.clasprc.json
-          npx -y @google/clasp login --no-localhost
-          npx -y @google/clasp push -f
+          echo "${CLASPRC}" > ~/.clasprc.json"
+          npx -y @google/clasp push
           
