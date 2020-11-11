@@ -2,17 +2,15 @@ function diff_data(
   first_data: string[][],
   second_data: string[][]
 ): string[][] {
-  const first_tit: string[] = [];
-  for (let i = 0; i < first_data.length; i++) {
-    first_tit[i] = first_data[i][0];
-  }
-  const second_tit: string[] = [];
-  for (let i = 0; i < second_data.length; i++) {
-    second_tit[i] = second_data[i][0];
-  }
+  const first_tit: string[] = first_data.map((i: string[]): string => {
+    return i[0];
+  });
+  const second_tit: string[] = second_data.map((i: string[]): string => {
+    return i[0];
+  });
 
   const tit_diff: string[] = second_tit.filter(
-    (i) => first_tit.indexOf(i) == -1
+    (i: string): boolean => first_tit.indexOf(i) == -1
   );
 
   const diff = [];
