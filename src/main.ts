@@ -43,25 +43,11 @@ async function main(): Promise<void> {
   );
 
   if (last_low === 1) {
-    const write_complate_data: string[][] = await generate_data<string[][]>(
-      all_data
-    );
-    const row: number = write_complate_data.length;
-    const col: number = write_complate_data[0].length;
-    complate_sheet.getRange(2, 1, row, col).setValues(write_complate_data);
+    writing_data(complate_sheet, all_data);
   } else {
     const diff = diff_data(read_complate_data, all_data.sort(sort_date));
-
     if (diff.length > 0) {
-      const write_complate_data: string[][] = await (
-        await generate_data<string[][]>(diff)
-      )
-        .concat(read_complate_data)
-        .sort(sort_date)
-        .slice(0, 500);
-      const row: number = write_complate_data.length;
-      const col: number = write_complate_data[0].length;
-      complate_sheet.getRange(2, 1, row, col).setValues(write_complate_data);
+      writing_data(complate_sheet, diff, read_complate_data);
     }
   }
 }
