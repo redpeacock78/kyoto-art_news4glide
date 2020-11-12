@@ -38,5 +38,5 @@ async function generate_data<T extends string[][]>(all_data: T): Promise<T> {
     ];
   }
 
-  return add_all_data.sort(sort_date).slice(0, 500) as T;
+  return add_all_data.sort(sort_date) as T;
 }
