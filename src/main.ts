@@ -7,25 +7,24 @@ async function main(): Promise<void> {
   const spread_id = "1UbxPew3ki_mlJmU6B0uzU__g02awVu1J5a0kgaSFvC0";
   const spread_id2 = "1869ZqW5nLdvAAtKe1JrZZkCA54NRO9eZTnj0Irt7RVI";
 
-  const sheet_life = sheet(spread_id, "life");
-  const sheet_teach = sheet(spread_id, "teach");
-  const sheet_event = sheet(spread_id, "event");
-  const sheet_emergency = sheet(spread_id, "emergency");
-  const sheet_scholarship = sheet(spread_id, "scholarship");
-  const sheet_careerdesign = sheet(spread_id, "careerdesign");
-
   const complate_sheet = sheet(spread_id2, "data");
 
-  const life_data: string[][] = sheet_life.getRange(1, 1, 5, 3).getValues();
-  const teach_data: string[][] = sheet_teach.getRange(1, 1, 5, 3).getValues();
-  const event_data: string[][] = sheet_event.getRange(1, 1, 5, 3).getValues();
-  const emergency_data: string[][] = sheet_emergency
+  const life_data: string[][] = sheet(spread_id, "life")
     .getRange(1, 1, 5, 3)
     .getValues();
-  const scholarship_data: string[][] = sheet_scholarship
+  const teach_data: string[][] = sheet(spread_id, "teach")
     .getRange(1, 1, 5, 3)
     .getValues();
-  const careerdesign_data: string[][] = sheet_careerdesign
+  const event_data: string[][] = sheet(spread_id, "event")
+    .getRange(1, 1, 5, 3)
+    .getValues();
+  const emergency_data: string[][] = sheet(spread_id, "emergency")
+    .getRange(1, 1, 5, 3)
+    .getValues();
+  const scholarship_data: string[][] = sheet(spread_id, "scholarship")
+    .getRange(1, 1, 5, 3)
+    .getValues();
+  const careerdesign_data: string[][] = sheet(spread_id, "careerdesign")
     .getRange(1, 1, 5, 3)
     .getValues();
 
